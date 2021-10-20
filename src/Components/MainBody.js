@@ -45,8 +45,8 @@ export default function MainBody(props) {
         </div>
         <div className="container" style={{color: props.mode==='dark'?'white':'black'}}>
             <h2>Your Summary</h2>
-            <p>{text===''?0:text.split(" ").length} Words & {text.length} Characters</p>
-            <p>{text===''?0.00:0.008 * text.split(" ").length} minutes to read</p>
+            <p>{text===''?0:text.split(" ").filter(t => t!=='').length} Words & {text.length} Characters</p>
+            <p>{text===''?0.00:0.008 * text.split(" ").filter(t => t!=='').length} minutes to read</p>
             <h2>Preview</h2>
             <p>{text===''?'Enter Text Above to Preview Here':text}</p>
         </div>
